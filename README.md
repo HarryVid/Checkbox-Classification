@@ -1,72 +1,93 @@
+```markdown
 # Autify_ML_Assignment
-Autify, Inc. | technical assignment for the Senior Machine Learning Engineer, LLMs &amp; Prompt Engineering (New Project) position! [Hiring 2022] ML Take-Home Assignment
 
-This GitHub repo contains the dataset, the code for the models and the model_weights for the respective models for this challenge.
+This repository contains the dataset, code for models, and model weights for the Autify, Inc. technical assignment for the Senior Machine Learning Engineer, LLMs & Prompt Engineering (New Project) position. This assignment was for hiring in 2022.
 
-Please do not disturb any file or folder structure.
+## Overview
 
-Also, I request you to please read and go through the autify_challenge.pdf document to under my overview, approach, thought process, analysis, problem-solving and conclusion for this challenge, I have taken a hybrid approach of both research and deployment.
+Please read the autify_challenge.pdf document for an overview, approach, thought process, analysis, problem-solving, and conclusion for this challenge. The approach taken involves a hybrid approach of both research and deployment.
 
-The checkbox_state_v2 contains the training and inference data. The training data is in the original format and can be used directly while in the inference folder, new images need to be added for testing.
-PLEASE NOTE that for inference only added 1 image at a time for testing because I did not have enough time to handle exceptions or implement multiple-image inferencing properly. I understand this could be an inconvenience and I apologise for that but this feature can easily be added later on.
+## Dataset
 
-The model_weights folder contains the model weights of all the models. They need not be changed as the respective file has the respective paths to the weights for either saving or loading.
-PLEASE NOTE that retraining the models will replace the old weights in the folder with the new so be careful with that. Either take a backup of the folder or re-download it from GitHub.
+The `checkbox_state_v2` directory contains the training and inference data. The training data is in the original format and can be used directly. For inference, new images need to be added to the `inference` folder for testing.
 
-The model's folder contains the code for all the baselines and checkpoints. If needed they can be opened up and analyzed the folder structure is straightforward. The main folder contains the final model code which will be used for inference. For more details and further explanations for baselines, checkpoints and final model files please refer to the autify_challenge.pdf document.
+## Model Weights
 
-To get everything setup:
+The `model_weights` folder contains the model weights of all the models. The respective file paths are set to load or save the weights. Please note that retraining the models will replace the old weights in the folder with the new ones.
 
-The first step would be to create a Python virtual environment: python -m venv autify_challenge
+## Model Code
 
-Activate the virtual environment: source autify_challenge/bin/activate
+The `models` folder contains the code for all the baselines and checkpoints. The main folder contains the final model code used for inference. For more details and explanations of baselines, checkpoints, and final model files, please refer to the autify_challenge.pdf document.
 
-Install the necessary libraries provided in the requirements.txt file: pip install -r requirements.txt
+## Setup Instructions
 
-This project uses matplotlib visualizations for the testing files only so in some cases it might throw an error if tkinter is not installed globally.
+To set up the environment, follow these steps:
 
-So please install tk using either:
+1. Create a Python virtual environment:
+   ```
+   python -m venv autify_challenge
+   ```
 
-pacman -S tk (Arch)
+2. Activate the virtual environment:
+   ```
+   source autify_challenge/bin/activate
+   ```
 
-apt install python3-tk (Debian)
+3. Install necessary libraries from requirements.txt:
+   ```
+   pip install -r requirements.txt
+   ```
 
-dnf install python3-tkinter (Fedora)
+Note: This project uses matplotlib visualizations for testing files only. If tkinter is not installed globally, it might throw an error. Install tk using one of the following commands based on your system:
 
-brew install python-tk (mac)
+- Arch Linux: `pacman -S tk`
+- Debian/Ubuntu: `apt install python3-tk`
+- Fedora: `dnf install python3-tkinter`
+- macOS: `brew install python-tk`
 
-To view the test results of the main/final model run the code: python main/efficientnet_test.py
+## Usage
 
-To submit your images copy the image one at a time to the inference folder mentioned above and then run: python main/efficientnet_inference.py
+- To view test results of the final model, run:
+  ```
+  python main/efficientnet_test.py
+  ```
 
-In case you want to train the model again then run the command: python main/efficientnet_train_val.py
+- To submit your images for inference, copy the image one at a time to the `inference` folder and then run:
+  ```
+  python main/efficientnet_inference.py
+  ```
 
-If you want to visualize the test results and accuracy for the baseline and checkpoint models run the following commands:
+- To train the model again, run:
+  ```
+  python main/efficientnet_train_val.py
+  ```
 
-python models/baselines/no_pretrain/resnet/resnet_test.py
+- To visualize test results and accuracy for baseline and checkpoint models, run the following commands:
+  ```
+  python models/baselines/no_pretrain/resnet/resnet_test.py
+  python models/baselines/no_pretrain/densenet/densenet_test.py
+  python models/baselines/no_pretrain/efficientnet/efficientnet_test.py
+  python models/baselines/pretrain/resnet/resnet_test.py
+  python models/baselines/pretrain/densenet/densenet_test.py
+  python models/baselines/pretrain/efficientnet/efficientnet_test.py
+  python models/checkpoints/checkpoint_1/efficientnet_test.py
+  python models/checkpoints/checkpoint_2/efficientnet_test.py
+  python models/checkpoints/checkpoint_3/efficientnet_test.py
+  python models/checkpoints/checkpoint_4/efficientnet_test.py
+  python models/checkpoints/checkpoint_5/efficientnet_test.py
+  ```
 
-python models/baselines/no_pretrain/densenet/densenet_test.py
+- If you want to train all the models from scratch, refer and run the following files after making them executable:
+  ```
+  ./baselines_run_script.sh
+  ./checkpoints_run_script.sh
+  ```
 
-python models/baselines/no_pretrain/efficientnet/efficientnet_test.py
+Please ensure file permissions are set correctly before running scripts.
 
-python models/baselines/pretrain/resnet/resnet_test.py
+## Note
 
-python models/baselines/pretrain/densenet/densenet_test.py
+For inference, only one image at a time is added for testing due to time constraints. However, this feature can be easily extended to handle multiple images later on.
 
-python models/baselines/pretrain/efficientnet/efficientnet_test.py
-	
-python models/checkpoints/checkpoint_1/efficientnet_test.py
-
-python models/checkpoints/checkpoint_2/efficientnet_test.py
-
-python models/checkpoints/checkpoint_3/efficientnet_test.py
-
-python models/checkpoints/checkpoint_4/efficientnet_test.py
-
-python models/checkpoints/checkpoint_5/efficientnet_test.py
-
-In case you want to train all the models from scratch then refer and run the following files after a chmod +x:
-
-./baselines_run_script.sh
-
-./checkpoints_run_script.sh
+Feel free to explore the codebase and provide any feedback or improvements.
+```
