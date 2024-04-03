@@ -1,23 +1,26 @@
 ```markdown
 # Autify_ML_Assignment
 
-This repository contains the dataset, code for models, and model weights for the Autify, Inc. technical assignment for the Senior Machine Learning Engineer, LLMs & Prompt Engineering (New Project) position. This assignment was for hiring in 2022.
+This repository contains the dataset, code for models, and model weights for the Autify, Inc. technical assignment for the Senior Machine Learning Engineer, LLMs & Prompt Engineering (New Project) position.
 
 ## Overview
 
-Please read the autify_challenge.pdf document for an overview, approach, thought process, analysis, problem-solving, and conclusion for this challenge. The approach taken involves a hybrid approach of both research and deployment.
+PLEASE NOTE: read the autify_challenge.pdf document for an overview, approach, thought process, analysis, problem-solving, and conclusion for this challenge. The approach taken involves a hybrid approach of both research and deployment.
 
 ## Dataset
 
 The `checkbox_state_v2` directory contains the training and inference data. The training data is in the original format and can be used directly. For inference, new images need to be added to the `inference` folder for testing.
+PLEASE NOTE: For inference, only one image at a time should be added for testing due to time constraints I have not implemented warning handling and multi image processing and other quality of life features. However, this feature can be easily extended to handle multiple images later on. I understand that this could be an inconvenience during testing and I apologise for the same.
 
 ## Model Weights
 
-The `model_weights` folder contains the model weights of all the models. The respective file paths are set to load or save the weights. Please note that retraining the models will replace the old weights in the folder with the new ones.
+The `model_weights` folder contains the model weights of all the models. The respective file paths are set to load or save the weights.
+PLEASE NOTE: retraining the models will replace the old weights in the folder with the new ones. Make sure to have a backup copy.
 
 ## Model Code
 
-The `models` folder contains the code for all the baselines and checkpoints. The main folder contains the final model code used for inference. For more details and explanations of baselines, checkpoints, and final model files, please refer to the autify_challenge.pdf document.
+The `models` folder contains the code for all the baselines and checkpoints. The main folder contains the final model code used for inference.
+PLEASE NOTE: For more details and explanations of baselines, checkpoints, and final model files, please refer to the autify_challenge.pdf document.
 
 ## Setup Instructions
 
@@ -44,6 +47,7 @@ Note: This project uses matplotlib visualizations for testing files only. If tki
 - Debian/Ubuntu: `apt install python3-tk`
 - Fedora: `dnf install python3-tkinter`
 - macOS: `brew install python-tk`
+- Windows: ToDo
 
 ## Usage
 
@@ -52,7 +56,7 @@ Note: This project uses matplotlib visualizations for testing files only. If tki
   python main/efficientnet_test.py
   ```
 
-- To submit your images for inference, copy the image one at a time to the `inference` folder and then run:
+- To submit your images for inference, copy the image one at a time to the `inference/data` folder inside checkbox_state_v2 and then run:
   ```
   python main/efficientnet_inference.py
   ```
@@ -98,7 +102,5 @@ Please ensure file permissions are set correctly before running scripts.
 
 ## Note
 
-For inference, only one image at a time is added for testing due to time constraints. However, this feature can be easily extended to handle multiple images later on.
-
-Feel free to explore the codebase and provide any feedback or improvements.
+Feel free to explore the codebase and provide any feedback or improvements or ask any questions. Again due to time constraints I have not implemented the Dockerfile as mentioned in the project please let me know if you would like to see this as well at a later date.
 ```
