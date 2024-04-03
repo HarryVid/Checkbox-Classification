@@ -65,21 +65,32 @@ Note: This project uses matplotlib visualizations for testing files only. If tki
 - To visualize test results and accuracy for baseline and checkpoint models, run the following commands:
   ```
   python models/baselines/no_pretrain/resnet/resnet_test.py
+  
   python models/baselines/no_pretrain/densenet/densenet_test.py
+  
   python models/baselines/no_pretrain/efficientnet/efficientnet_test.py
+  
   python models/baselines/pretrain/resnet/resnet_test.py
+  
   python models/baselines/pretrain/densenet/densenet_test.py
+  
   python models/baselines/pretrain/efficientnet/efficientnet_test.py
+  
   python models/checkpoints/checkpoint_1/efficientnet_test.py
+  
   python models/checkpoints/checkpoint_2/efficientnet_test.py
+  
   python models/checkpoints/checkpoint_3/efficientnet_test.py
+  
   python models/checkpoints/checkpoint_4/efficientnet_test.py
+  
   python models/checkpoints/checkpoint_5/efficientnet_test.py
   ```
 
 - If you want to train all the models from scratch, refer and run the following files after making them executable:
   ```
   ./baselines_run_script.sh
+  
   ./checkpoints_run_script.sh
   ```
 
