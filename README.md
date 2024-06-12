@@ -1,9 +1,4 @@
 ```markdown
-# Autify_ML_Assignment
-
-This repository contains the dataset, code for models, and model weights for the
-Autify, Inc. technical assignment for the Senior Machine Learning Engineer, LLMs & Prompt Engineering (New Project) position.
-
 ## Overview
 
 PLEASE NOTE: read the autify_challenge.pdf document for an overview, approach, thought process, analysis, problem-solving, and conclusion for this challenge.
